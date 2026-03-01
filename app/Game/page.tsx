@@ -22,37 +22,51 @@ export default function GamePage() {
         </aside>
 
         {/* Main Content */}
-        <section className="md:col-span-3 space-y-10">
+        <section className="md:col-span-3 space-y-12">
 
           {/* Trailer */}
-          <div className="aspect-video bg-black rounded-xl flex items-center justify-center border border-white/10">
-            <span className="text-gray-500">YouTube Trailer Here</span>
+          <div className="aspect-video bg-black rounded-xl border border-white/10 flex items-center justify-center">
+            <span className="text-gray-500">YouTube Trailer Placeholder</span>
           </div>
 
-          {/* Description */}
+          {/* Game Title */}
           <div className="space-y-4">
-            <h1 className="text-3xl font-semibold">Upcoming Horror Game</h1>
-            <p className="text-gray-400 leading-relaxed">
+            <h1 className="text-4xl font-semibold">
+              Upcoming Horror Game
+            </h1>
+
+            <p className="text-gray-400 leading-relaxed max-w-3xl">
               A psychological horror experience set in a mysterious village.
               Atmospheric storytelling, immersive sound design,
               and deeply unsettling environments.
             </p>
           </div>
 
-          {/* System Requirements */}
-          <div className="border-t border-white/10 pt-8">
-            <h2 className="text-xl font-semibold mb-4">System Requirements</h2>
+          {/* Store Buttons */}
+          <div className="flex gap-4">
+            <button className="px-6 py-3 bg-white text-black rounded-md hover:bg-gray-200 transition">
+              Steam
+            </button>
 
-            <div className="grid md:grid-cols-2 gap-6 text-sm text-gray-400">
+            <button className="px-6 py-3 border border-white rounded-md hover:bg-white hover:text-black transition">
+              Epic Games
+            </button>
+          </div>
+
+          {/* System Requirements */}
+          <div className="border-t border-white/10 pt-10">
+            <h2 className="text-xl font-semibold mb-6">System Requirements</h2>
+
+            <div className="grid md:grid-cols-2 gap-8 text-sm text-gray-400">
               <div>
-                <h3 className="text-white mb-2">Minimum</h3>
+                <h3 className="text-white mb-3">Minimum</h3>
                 <p>OS: Windows 10</p>
                 <p>RAM: 8 GB</p>
                 <p>GPU: GTX 1060</p>
               </div>
 
               <div>
-                <h3 className="text-white mb-2">Recommended</h3>
+                <h3 className="text-white mb-3">Recommended</h3>
                 <p>OS: Windows 11</p>
                 <p>RAM: 16 GB</p>
                 <p>GPU: RTX 2060+</p>
@@ -61,6 +75,7 @@ export default function GamePage() {
           </div>
 
         </section>
+
       </div>
 
     </main>
