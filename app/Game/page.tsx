@@ -44,18 +44,28 @@ export default function GamePage() {
           </h2>
 
           {games.map((game) => (
-            <div
-              key={game.id}
-              onClick={() => setSelected(game)}
-              className={`p-4 rounded-lg cursor-pointer transition border ${
-                selected.id === game.id
-                  ? "border-white bg-white/5"
-                  : "border-white/10 hover:border-white/40"
-              }`}
-            >
-              {game.title}
-            </div>
-          ))}
+  <div
+       key={game.id}
+       onClick={() => setSelected(game)}
+       className={`cursor-pointer rounded-xl overflow-hidden transition-all duration-300 border ${
+       selected.id === game.id
+           ? "border-white shadow-[0_0_40px_rgba(255,255,255,0.1)]"
+           : "border-white/10 hover:border-white/40"
+        }`}
+              >
+      <div className="h-28 overflow-hidden">
+       <img
+        src={game.thumbnail}
+        alt={game.title}
+        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+      />
+     </div>
+
+     <div className="p-4 bg-black/40">
+      <h3 className="text-sm font-medium">{game.title}</h3>
+     </div>
+      </div>
+      ))}
         </aside>
 
         {/* Main Content */}
