@@ -27,8 +27,11 @@ export default function Home() {
       <section className="grid md:grid-cols-2 gap-8 py-20 max-w-6xl mx-auto">
 
         {/* Game Card */}
-        <div className="group relative border border-white/10 rounded-xl overflow-hidden hover:border-white/30 transition duration-300">
-          <div className="h-72 bg-gradient-to-br from-gray-800 to-black flex items-center justify-center">
+        <div className="group relative border border-white/10 rounded-xl overflow-hidden 
+          hover:border-white/40 hover:shadow-[0_0_40px_rgba(255,255,255,0.08)] 
+          transition-all duration-500">
+          <div className="h-72 bg-gradient-to-br from-gray-900 via-black to-gray-800 
+           group-hover:scale-105 transition-transform duration-700">
             <span className="text-gray-500">Game Thumbnail</span>
           </div>
 
@@ -41,8 +44,11 @@ export default function Home() {
         </div>
 
         {/* Asset Card */}
-        <div className="group relative border border-white/10 rounded-xl overflow-hidden hover:border-white/30 transition duration-300">
-          <div className="h-72 bg-gradient-to-br from-gray-800 to-black flex items-center justify-center">
+        <div className="group relative border border-white/10 rounded-xl overflow-hidden 
+          hover:border-white/40 hover:shadow-[0_0_40px_rgba(255,255,255,0.08)] 
+          transition-all duration-500">
+          <div className="h-72 bg-gradient-to-br from-gray-900 via-black to-gray-800 
+           group-hover:scale-105 transition-transform duration-700">
             <span className="text-gray-500">Asset Thumbnail</span>
           </div>
 
