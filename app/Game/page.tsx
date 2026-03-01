@@ -2,10 +2,10 @@ export default function GamePage() {
   return (
     <main className="min-h-screen bg-[#0f0f0f] text-white px-6 py-20">
 
-      <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-16">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-16 relative">
 
         {/* Sidebar */}
-        <aside className="md:col-span-1 space-y-6">
+        <aside className="md:col-span-1 space-y-6 pr-8 border-r border-white/10">
           <h2 className="text-xs uppercase tracking-widest text-gray-500">
             Games
           </h2>
@@ -25,8 +25,10 @@ export default function GamePage() {
         <section className="md:col-span-3 space-y-14">
 
           {/* Trailer */}
-          <div className="aspect-video bg-black rounded-2xl border border-white/10 shadow-[0_0_60px_rgba(255,255,255,0.05)] flex items-center justify-center">
-            <span className="text-gray-500">YouTube Trailer Placeholder</span>
+          <div className="aspect-video bg-gradient-to-br from-gray-900 via-black to-gray-800 rounded-2xl border border-white/10 shadow-[0_0_80px_rgba(255,255,255,0.06)] flex items-center justify-center">
+          <span className="text-gray-500 text-sm tracking-wide">
+             YouTube Trailer Placeholder
+          </span>
           </div>
 
           {/* Game Info */}
