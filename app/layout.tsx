@@ -25,25 +25,22 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      ><body className="bg-[#0f0f0f] text-white">
-  <nav className="w-full flex justify-between items-center px-8 py-6 border-b border-white/10">
-    <div className="text-lg font-semibold tracking-wide">
-      NightLamp
-    </div>
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#0f0f0f] text-white`}
+      >
+        <nav className="w-full flex justify-between items-center px-8 py-6 border-b border-white/10">
+          <div className="text-lg font-semibold tracking-wide">
+            NightLamp
+          </div>
 
-    <div className="flex gap-8 text-sm text-gray-300">
-      <a href="/" className="hover:text-white transition">Home</a>
-      <a href="/game" className="hover:text-white transition">Game</a>
-      <a href="/assets" className="hover:text-white transition">Assets</a>
-      <a href="/about" className="hover:text-white transition">About</a>
-      <a href="/contact" className="hover:text-white transition">Contact</a>
-    </div>
-  </nav>
+          <div className="flex gap-8 text-sm text-gray-300">
+            <a href="/" className="hover:text-white transition">Home</a>
+            <a href="/game" className="hover:text-white transition">Game</a>
+            <a href="/assets" className="hover:text-white transition">Assets</a>
+            <a href="/about" className="hover:text-white transition">About</a>
+            <a href="/contact" className="hover:text-white transition">Contact</a>
+          </div>
+        </nav>
 
-  {children}
-</body>
-        
         {children}
       </body>
     </html>
