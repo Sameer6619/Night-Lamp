@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Modular Village Building Kit",
+    "description": "High-quality modular medieval village kit designed for Unreal Engine 5. Fully optimized and Nanite-ready.",
+    "engine": "Unreal Engine 5",
+    "polygons": "Optimized",
+    "textures": "4K PBR",
+    "platforms": ["Windows"],
+    "images": [
+      "/asset1.jpg",
+      "/asset2.jpg",
+      "/asset3.jpg"
+    ],
+    "storeLinks": {
+      "fab": "#",
+      "epic": "#"
+    }
+  }
+]

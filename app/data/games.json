@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "title": "Echoes in the Static",
+    "description": "A psychological horror experience set in a mysterious village.",
+    "media": [
+      { "type": "video", "id": "vqdY9HxYsns" },
+      { "type": "image", "src": "/images/game1-1.jpg" },
+      { "type": "image", "src": "/images/game1-2.jpg" }
+    ],
+    "min": {
+      "os": "Windows 10",
+      "ram": "8 GB",
+      "gpu": "GTX 1060"
+    },
+    "rec": {
+      "os": "Windows 11",
+      "ram": "16 GB",
+      "gpu": "RTX 2060+"
+    }
+  },
+  {
+    "id": 2,
+    "title": "Project Abyss",
+    "description": "An atmospheric survival descent into forgotten underground ruins.",
+    "media": [
+      { "type": "video", "id": "dQw4w9WgXcQ" },
+      { "type": "image", "src": "/images/game2-1.jpg" }
+    ],
+    "min": {
+      "os": "Windows 10",
+      "ram": "8 GB",
+      "gpu": "GTX 1070"
+    },
+    "rec": {
+      "os": "Windows 11",
+      "ram": "16 GB",
+      "gpu": "RTX 3060"
+    }
+  },
+  {
+  "id": 3,
+  "title": "Test Game",
+  "description": "Testing dynamic routing.",
+  "media": [
+    { "type": "image", "src": "/images/echoes-01.jpg" }
+  ],
+  "min": { "os": "Windows 10", "ram": "4 GB", "gpu": "GTX 1050" },
+  "rec": { "os": "Windows 11", "ram": "8 GB", "gpu": "GTX 1660" }
+}
+]
