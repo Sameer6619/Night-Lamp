@@ -7,23 +7,16 @@ const games = [
     id: 1,
     title: "Echoes in the Static",
     trailer: "vqdY9HxYsns",
-    description:
-      "A psychological horror experience set in a mysterious village. Atmospheric storytelling and immersive sound design.",
-    min: {
-      os: "Windows 10",
-      ram: "8 GB",
-      gpu: "GTX 1060",
-    },
-    rec: {
-      os: "Windows 11",
-      ram: "16 GB",
-      gpu: "RTX 2060+",
-    },
+    thumbnail: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+    description: "A psychological horror experience set in a mysterious village.",
+    min: { os: "Windows 10", ram: "8 GB", gpu: "GTX 1060" },
+    rec: { os: "Windows 11", ram: "16 GB", gpu: "RTX 2060+" },
   },
   {
     id: 2,
     title: "Coming Soon Project",
     trailer: "",
+    thumbnail: "https://images.unsplash.com/photo-1523413651479-597eb2da0ad6",
     description: "Next horror project currently in early development.",
     min: { os: "-", ram: "-", gpu: "-" },
     rec: { os: "-", ram: "-", gpu: "-" },
