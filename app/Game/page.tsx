@@ -62,7 +62,10 @@ export default function GamePage() {
         </aside>
 
         {/* Main Content */}
-        <section className="md:col-span-3 space-y-14">
+        <section
+  key={selected.id}
+  className="md:col-span-3 space-y-14 transition-opacity duration-500 animate-fade"
+>
 
           {/* Trailer */}
           <div className="aspect-video rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_60px_rgba(255,255,255,0.05)]">
@@ -82,7 +85,17 @@ export default function GamePage() {
 
           {/* Info */}
           <div className="space-y-6">
-            <h1 className="text-4xl font-semibold">{selected.title}</h1>
+            <div className="space-y-4">
+  <div className="h-12 w-[2px] bg-white/40"></div>
+
+  <h1 className="text-5xl md:text-6xl font-bold tracking-tight leading-tight">
+    {selected.title.toUpperCase()}
+  </h1>
+
+  <p className="text-xs tracking-[0.3em] text-gray-500 uppercase">
+    In Development
+  </p>
+</div>
 
             <p className="text-gray-400 max-w-3xl">
               {selected.description}
