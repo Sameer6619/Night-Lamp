@@ -1,6 +1,6 @@
 "use client";
 
-import games from "../data/games.json";
+import games from "../../data/games.json";
 import Link from "next/link";
 
 export default function GamesPage() {

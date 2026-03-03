@@ -2,7 +2,7 @@
 
 import { useParams } from "next/navigation";
 import { useState } from "react";
-import assets from "../../data/assets.json";
+import assets from "../../../data/assets.json";
 
 export default function AssetDetailPage() {
   const params = useParams();
