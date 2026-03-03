@@ -1,6 +1,6 @@
 "use client";
 
-import assets from "../data/assets.json";
+import assets from "../../data/assets.json";
 import Link from "next/link";
 
 export default function AssetsPage() {

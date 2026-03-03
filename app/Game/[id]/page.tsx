@@ -1,9 +1,17 @@
 import games from "../../../data/games.json";
 import GameClient from "./GameClient";
+import type { Game } from "../../../types/game";
 
-export default function GameDetailPage({ params }) {
-  const id = Number(params.id);
-  const game = games.find((g) => g.id === id);
+export default async function GameDetailPage({
+  params,
+}: {
+  params: { id: string };
+}) {
+  const { id } = await params; // 👈 important
+
+  const game = (games as Game[]).find(
+    (g) => g.id === Number(id)
+  );
 
   if (!game) {
     return (
