@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import games from "../../../data/games.json";
 import GameClient from "./GameClient";
 import type { Game } from "../../../types/game";

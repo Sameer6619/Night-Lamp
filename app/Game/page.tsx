@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import games from "../../data/games.json";
 import Link from "next/link";
 
