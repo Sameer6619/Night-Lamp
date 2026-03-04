@@ -4,105 +4,125 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen bg-[#0f0f0f] text-white overflow-hidden">
+    <main className="bg-[#0b0f17] text-white">
 
-      {/* Background Atmosphere */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-[-200px] left-1/2 -translate-x-1/2 w-[1400px] h-[900px] bg-blue-500/10 blur-[220px] animate-pulse"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-900/5 via-transparent to-black"></div>
-      </div>
+      {/* HERO */}
+      <section className="relative h-screen w-full overflow-hidden">
 
-      {/* Hero Section */}
-      <section className="min-h-screen flex flex-col items-center justify-center px-8 text-center">
+        {/* Background Image */}
+        <img
+          src="/images/game1-1.jpg"
+          className="absolute inset-0 w-full h-full object-cover"
+          alt="Hero Background"
+        />
 
-        <h1 className="text-6xl md:text-7xl font-bold tracking-tight mb-6">
-          NightLamp Studios
-        </h1>
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/70"></div>
 
-        <p className="text-gray-400 text-lg max-w-2xl mb-16">
-          Crafting Worlds Beyond the Light.
-        </p>
+        {/* Hero Content */}
+        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
 
-        {/* Floating Cards */}
-        <div className="relative w-full max-w-6xl grid md:grid-cols-2 gap-12">
+          <h1 className="text-7xl font-bold mb-6">
+            NightLamp Studios
+          </h1>
 
-          {/* Game Card */}
-          <div className="group relative border border-blue-400/20 rounded-3xl overflow-hidden bg-black/40 backdrop-blur-lg shadow-[0_0_120px_rgba(59,130,246,0.15)] hover:scale-[1.02] transition duration-500">
+          <p className="text-gray-300 max-w-xl text-lg mb-10">
+            Atmospheric worlds. Cinematic storytelling.  
+            Built with Unreal Engine.
+          </p>
 
-            <div className="aspect-video overflow-hidden">
-              <img
-                src="/images/game1-1.jpg"
-                className="w-full h-full object-cover group-hover:scale-105 transition duration-700"
-                alt="Upcoming Game"
-              />
-            </div>
+          <div className="flex gap-6">
+            <Link
+              href="/game"
+              className="px-8 py-3 bg-blue-600 hover:bg-blue-700 rounded-md transition"
+            >
+              Explore Game
+            </Link>
 
-            <div className="p-8 text-left space-y-4">
-              <h2 className="text-2xl font-semibold">
-                Upcoming Horror Game
-              </h2>
-
-              <p className="text-gray-400 text-sm">
-                Psychological horror experience focused on atmosphere,
-                storytelling and immersive tension.
-              </p>
-
-              <Link
-                href="/game"
-                className="inline-block mt-4 px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded-md transition"
-              >
-                View Game
-              </Link>
-            </div>
+            <Link
+              href="/assets"
+              className="px-8 py-3 border border-white/30 hover:border-white rounded-md transition"
+            >
+              Browse Assets
+            </Link>
           </div>
+        </div>
+      </section>
 
-          {/* Asset Card */}
-          <div className="group relative border border-blue-400/20 rounded-3xl overflow-hidden bg-black/40 backdrop-blur-lg shadow-[0_0_120px_rgba(59,130,246,0.15)] hover:scale-[1.02] transition duration-500 md:translate-y-12">
+      {/* FLOATING PROJECT PANELS */}
+      <section className="relative -mt-32 px-8 max-w-6xl mx-auto grid md:grid-cols-2 gap-10">
 
-            <div className="aspect-video overflow-hidden">
-              <img
-                src="/images/game2-1.jpg"
-                className="w-full h-full object-cover group-hover:scale-105 transition duration-700"
-                alt="Modular Building Kit"
-              />
-            </div>
+        {/* Game Panel */}
+        <div className="bg-[#0f172a] rounded-2xl overflow-hidden border border-white/10 hover:border-blue-400 transition">
 
-            <div className="p-8 text-left space-y-4">
-              <h2 className="text-2xl font-semibold">
-                Modular Building Kit
-              </h2>
+          <img
+            src="/images/game1-2.jpg"
+            className="w-full h-60 object-cover"
+            alt="Game"
+          />
 
-              <p className="text-gray-400 text-sm">
-                High-quality modular environment kit built for Unreal Engine.
-                Optimized, scalable and production ready.
-              </p>
+          <div className="p-6 space-y-4">
+            <h2 className="text-2xl font-semibold">
+              Upcoming Horror Game
+            </h2>
 
-              <Link
-                href="/assets"
-                className="inline-block mt-4 px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded-md transition"
-              >
-                View Assets
-              </Link>
-            </div>
+            <p className="text-gray-400 text-sm">
+              A psychological horror experience set in a mysterious village.
+              Atmospheric storytelling and immersive tension.
+            </p>
+
+            <Link
+              href="/game"
+              className="inline-block px-5 py-2 bg-blue-600 hover:bg-blue-700 rounded"
+            >
+              View Game
+            </Link>
           </div>
+        </div>
 
+        {/* Assets Panel */}
+        <div className="bg-[#0f172a] rounded-2xl overflow-hidden border border-white/10 hover:border-blue-400 transition">
+
+          <img
+            src="/images/game2-1.jpg"
+            className="w-full h-60 object-cover"
+            alt="Assets"
+          />
+
+          <div className="p-6 space-y-4">
+            <h2 className="text-2xl font-semibold">
+              Modular Building Kits
+            </h2>
+
+            <p className="text-gray-400 text-sm">
+              High quality modular environment kits for Unreal Engine.
+              Optimized, scalable and production ready.
+            </p>
+
+            <Link
+              href="/assets"
+              className="inline-block px-5 py-2 bg-blue-600 hover:bg-blue-700 rounded"
+            >
+              View Assets
+            </Link>
+          </div>
         </div>
 
       </section>
 
-      {/* Studio Info Section */}
-      <section className="py-32 px-8 border-t border-white/10">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
-          <h2 className="text-4xl font-semibold">
-            Environment Design & Atmospheric Storytelling
-          </h2>
+      {/* STUDIO SECTION */}
+      <section className="py-32 px-8 text-center max-w-3xl mx-auto">
 
-          <p className="text-gray-400 leading-relaxed">
-            NightLamp Studios focuses on immersive environments, cinematic
-            lighting and emotionally driven gameplay experiences. Built with
-            Unreal Engine and modern production workflows.
-          </p>
-        </div>
+        <h2 className="text-4xl font-semibold mb-6">
+          Crafting Immersive Worlds
+        </h2>
+
+        <p className="text-gray-400 leading-relaxed">
+          NightLamp Studios focuses on cinematic lighting,
+          atmospheric environments and emotionally driven gameplay
+          experiences built with Unreal Engine 5.
+        </p>
+
       </section>
 
     </main>
