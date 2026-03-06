@@ -1,22 +1,48 @@
 "use client";
 
 import { useParams } from "next/navigation";
-import { useState } from "react";
-import assets from "../../../data/assets.json";
+import rawAssets from "../../../data/assets.json";
+import AssetMediaGallery from "../../components/AssetMediaGallery";
+
+// Define the exact shape so TypeScript knows images and video exist
+type Asset = {
+  id: number;
+  name: string;
+  description: string;
+  engine: string;
+  polygons: string;
+  textures: string;
+  platforms: string[];
+  images: string[];
+  video?: string | null;
+  store: string;
+};
+
+// Cast the imported JSON to our type
+const assets = rawAssets as Asset[];
 
 export default function AssetDetailPage() {
   const params = useParams();
   const id = Number(params.id);
   const asset = assets.find((a) => a.id === id);
 
-  const [activeImage, setActiveImage] = useState(0);
-
+  // 404 state
   if (!asset) {
     return (
-      <main style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: "#080808", color: "#e8e0d4", fontFamily: "'Georgia', serif" }}>
+      <main style={{
+        minHeight: "100vh",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        background: "#080808",
+        color: "#e8e0d4",
+        fontFamily: "'Georgia', serif",
+      }}>
         <div style={{ textAlign: "center" }}>
           <p style={{ fontFamily: "'Cinzel', serif", fontSize: "3rem", color: "#3a2e1e" }}>404</p>
-          <p style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: "italic", color: "#6b5a44", marginTop: "12px" }}>Asset not found.</p>
+          <p style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: "italic", color: "#6b5a44", marginTop: "12px" }}>
+            Asset not found.
+          </p>
         </div>
       </main>
     );
@@ -83,51 +109,7 @@ export default function AssetDetailPage() {
           gap: 8px;
           transition: color 0.3s ease, gap 0.3s ease;
         }
-
         .back-link:hover { color: #c9a97a; gap: 12px; }
-
-        .main-image-wrap {
-          position: relative;
-          overflow: hidden;
-          border: 1px solid #1e1a14;
-          background: #0a0a0a;
-        }
-
-        .main-image-wrap img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          filter: saturate(0.65) brightness(0.8);
-          transition: filter 0.6s ease;
-        }
-
-        .main-image-wrap:hover img {
-          filter: saturate(0.85) brightness(0.95);
-        }
-
-        .thumb {
-          cursor: pointer;
-          overflow: hidden;
-          border: 1px solid #1a1510;
-          transition: border-color 0.3s ease, transform 0.3s ease;
-          flex-shrink: 0;
-        }
-
-        .thumb:hover { transform: translateY(-2px); border-color: #3a2e1e; }
-        .thumb.active { border-color: #c9a97a; }
-
-        .thumb img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          filter: saturate(0.4) brightness(0.6);
-          transition: filter 0.4s ease;
-        }
-
-        .thumb.active img,
-        .thumb:hover img {
-          filter: saturate(0.75) brightness(0.85);
-        }
 
         .detail-panel {
           background: #0d0d0d;
@@ -139,7 +121,6 @@ export default function AssetDetailPage() {
           position: relative;
           overflow: hidden;
         }
-
         .detail-panel::before {
           content: '';
           position: absolute;
@@ -171,6 +152,31 @@ export default function AssetDetailPage() {
           opacity: 0.4;
         }
 
+        .store-btn {
+          font-family: 'DM Sans', sans-serif;
+          font-size: 0.68rem;
+          font-weight: 300;
+          letter-spacing: 0.28em;
+          text-transform: uppercase;
+          border: 1px solid #3a2e1e;
+          padding: 14px 24px;
+          transition: all 0.4s ease;
+          background: transparent;
+          color: #c9a97a;
+          text-decoration: none;
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          width: 100%;
+          justify-content: center;
+        }
+        .store-btn:hover {
+          background: rgba(201, 169, 122, 0.08);
+          border-color: #c9a97a;
+          color: #f0e0c0;
+          gap: 15px;
+        }
+
         .divider-ornament {
           display: flex;
           align-items: center;
@@ -193,7 +199,6 @@ export default function AssetDetailPage() {
         .fade-1 { animation: fadeUp 0.9s ease forwards; }
         .fade-2 { animation: fadeUp 0.9s ease 0.15s both; }
         .fade-3 { animation: fadeUp 0.9s ease 0.3s both; }
-        .fade-4 { animation: fadeUp 0.9s ease 0.45s both; }
       `}</style>
 
       <div className="noise-overlay" />
@@ -207,7 +212,15 @@ export default function AssetDetailPage() {
       }} />
 
       {/* Top nav */}
-      <div style={{ borderBottom: "1px solid #131008", padding: "20px 40px", display: "flex", alignItems: "center", justifyContent: "space-between", position: "relative", zIndex: 10 }}>
+      <div style={{
+        borderBottom: "1px solid #131008",
+        padding: "20px 40px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        position: "relative",
+        zIndex: 10,
+      }}>
         <a href="/assets" className="back-link">← &nbsp;All Assets</a>
         <span className="section-label">NightLamp Studios &nbsp;·&nbsp; Building Kits</span>
       </div>
@@ -221,51 +234,28 @@ export default function AssetDetailPage() {
           <p className="asset-desc" style={{ marginTop: "20px", maxWidth: "640px" }}>{asset.description}</p>
         </div>
 
+        {/* DIVIDER */}
         <div className="fade-2" style={{ marginBottom: "56px" }}>
           <div className="divider-ornament">
             <span style={{ fontSize: "1rem", color: "#3a2e1e" }}>✦</span>
           </div>
         </div>
 
-        {/* MAIN LAYOUT: image left, details right */}
-        <div className="fade-3" style={{ display: "grid", gridTemplateColumns: "1fr 280px", gap: "2px", alignItems: "start" }}>
+        {/* MAIN LAYOUT */}
+        <div className="fade-3" style={{
+          display: "grid",
+          gridTemplateColumns: "1fr 280px",
+          gap: "24px",
+          alignItems: "start",
+        }}>
 
-          {/* Left: image viewer */}
-          <div style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
+          {/* LEFT: Media Gallery */}
+          <AssetMediaGallery
+            video={asset.video ?? null}
+            images={asset.images ?? []}
+          />
 
-            {/* Main image */}
-            <div className="main-image-wrap" style={{ aspectRatio: "16/9" }}>
-              <img src={asset.images[activeImage]} alt="Asset Preview" />
-              <div style={{
-                position: "absolute", inset: 0,
-                background: "linear-gradient(to top, rgba(8,8,8,0.5) 0%, transparent 60%)",
-                pointerEvents: "none",
-              }} />
-              {/* Image counter */}
-              <div style={{ position: "absolute", bottom: "16px", right: "20px", zIndex: 5 }}>
-                <span className="section-label" style={{ color: "#9c8060" }}>
-                  {String(activeImage + 1).padStart(2, "0")} / {String(asset.images.length).padStart(2, "0")}
-                </span>
-              </div>
-            </div>
-
-            {/* Thumbnails */}
-            <div style={{ display: "flex", gap: "2px", overflowX: "auto", paddingBottom: "4px" }}>
-              {asset.images.map((img, index) => (
-                <div
-                  key={index}
-                  className={`thumb${activeImage === index ? " active" : ""}`}
-                  onClick={() => setActiveImage(index)}
-                  style={{ width: "110px", height: "68px", flexShrink: 0 }}
-                >
-                  <img src={img} alt={`Thumbnail ${index + 1}`} />
-                </div>
-              ))}
-            </div>
-
-          </div>
-
-          {/* Right: detail panels */}
+          {/* RIGHT: Detail panels */}
           <div style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
 
             <div className="detail-panel">
@@ -286,9 +276,22 @@ export default function AssetDetailPage() {
               <p className="detail-panel-value">{asset.textures}</p>
             </div>
 
-            <div className="detail-panel" style={{ marginTop: "2px" }}>
-              <p className="detail-panel-label" style={{ marginBottom: "4px" }}>Tags</p>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: "6px", marginTop: "4px" }}>
+            {/* Store button */}
+            <div className="detail-panel" style={{ padding: "20px 24px" }}>
+              <a
+                href={asset.store}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="store-btn"
+              >
+                Get the Asset &nbsp;→
+              </a>
+            </div>
+
+            {/* Tags */}
+            <div className="detail-panel">
+              <p className="detail-panel-label" style={{ marginBottom: "8px" }}>Tags</p>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
                 {["Modular", "UE5", "Production Ready", "Environment"].map((tag) => (
                   <span key={tag} style={{
                     fontFamily: "'DM Sans', sans-serif",
@@ -298,7 +301,9 @@ export default function AssetDetailPage() {
                     color: "#6b5a44",
                     border: "1px solid #2a2016",
                     padding: "4px 10px",
-                  }}>{tag}</span>
+                  }}>
+                    {tag}
+                  </span>
                 ))}
               </div>
             </div>

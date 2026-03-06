@@ -7,141 +7,18 @@
     "polygons": "Optimized",
     "textures": "4K PBR",
     "platforms": ["Windows"],
+    "video": "CMZkxl-6sgA",
     "images": [
       "/asset1.jpg",
       "/asset2.jpg",
-      "/asset3.jpg"
+      "/asset3.jpg",
+      "/asset4.jpg",
+      "/asset5.jpg",
+      "/asset6.jpg",
+      "/asset7.jpg",
+      "/asset8.jpg",
+      "/asset9.jpg"
     ],
-    "storeLinks": {
-      "fab": "#",
-      "epic": "#"
-    }
-  },
-  {
-    "id": 2,
-    "name": "Modular Village Building Kit",
-    "description": "High-quality modular medieval village kit designed for Unreal Engine 5. Fully optimized and Nanite-ready.",
-    "engine": "Unreal Engine 5",
-    "polygons": "Optimized",
-    "textures": "4K PBR",
-    "platforms": ["Windows"],
-    "images": [
-      "/asset1.jpg",
-      "/asset2.jpg",
-      "/asset3.jpg"
-    ],
-    "storeLinks": {
-      "fab": "#",
-      "epic": "#"
-    }
-  },
-   {
-    "id": 3,
-    "name": "Modular Village Building Kit",
-    "description": "High-quality modular medieval village kit designed for Unreal Engine 5. Fully optimized and Nanite-ready.",
-    "engine": "Unreal Engine 5",
-    "polygons": "Optimized",
-    "textures": "4K PBR",
-    "platforms": ["Windows"],
-    "images": [
-      "/asset1.jpg",
-      "/asset2.jpg",
-      "/asset3.jpg"
-    ],
-    "storeLinks": {
-      "fab": "#",
-      "epic": "#"
-    }
-  },
-  {
-    "id": 4,
-    "name": "Modular Village Building Kit",
-    "description": "High-quality modular medieval village kit designed for Unreal Engine 5. Fully optimized and Nanite-ready.",
-    "engine": "Unreal Engine 5",
-    "polygons": "Optimized",
-    "textures": "4K PBR",
-    "platforms": ["Windows"],
-    "images": [
-      "/asset1.jpg",
-      "/asset2.jpg",
-      "/asset3.jpg"
-    ],
-    "storeLinks": {
-      "fab": "#",
-      "epic": "#"
-    }
-  },
-    {
-    "id": 5,
-    "name": "Modular Village Building Kit",
-    "description": "High-quality modular medieval village kit designed for Unreal Engine 5. Fully optimized and Nanite-ready.",
-    "engine": "Unreal Engine 5",
-    "polygons": "Optimized",
-    "textures": "4K PBR",
-    "platforms": ["Windows"],
-    "images": [
-      "/asset1.jpg",
-      "/asset2.jpg",
-      "/asset3.jpg"
-    ],
-    "storeLinks": {
-      "fab": "#",
-      "epic": "#"
-    }
-  },
-  {
-    "id": 6,
-    "name": "Modular Village Building Kit",
-    "description": "High-quality modular medieval village kit designed for Unreal Engine 5. Fully optimized and Nanite-ready.",
-    "engine": "Unreal Engine 5",
-    "polygons": "Optimized",
-    "textures": "4K PBR",
-    "platforms": ["Windows"],
-    "images": [
-      "/asset1.jpg",
-      "/asset2.jpg",
-      "/asset3.jpg"
-    ],
-    "storeLinks": {
-      "fab": "#",
-      "epic": "#"
-    }
-  },
-   {
-    "id": 7,
-    "name": "Modular Village Building Kit",
-    "description": "High-quality modular medieval village kit designed for Unreal Engine 5. Fully optimized and Nanite-ready.",
-    "engine": "Unreal Engine 5",
-    "polygons": "Optimized",
-    "textures": "4K PBR",
-    "platforms": ["Windows"],
-    "images": [
-      "/asset1.jpg",
-      "/asset2.jpg",
-      "/asset3.jpg"
-    ],
-    "storeLinks": {
-      "fab": "#",
-      "epic": "#"
-    }
-  },
-  {
-    "id": 8,
-    "name": "Modular Village Building Kit",
-    "description": "High-quality modular medieval village kit designed for Unreal Engine 5. Fully optimized and Nanite-ready.",
-    "engine": "Unreal Engine 5",
-    "polygons": "Optimized",
-    "textures": "4K PBR",
-    "platforms": ["Windows"],
-    "images": [
-      "/asset1.jpg",
-      "/asset2.jpg",
-      "/asset3.jpg"
-    ],
-    "storeLinks": {
-      "fab": "#",
-      "epic": "#"
-    }
+    "store": "https://www.fab.com/listings/ddc95c12-26e3-406d-9213-8783f027ad69"
   }
-
 ]

@@ -197,24 +197,19 @@ export default function AssetsPage() {
           gap: 13px;
         }
 
-        /* Featured first card spans 2 columns */
-        .grid-featured {
+        /* Uniform 3-column grid, all cards equal */
+        .assets-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
           gap: 2px;
         }
 
-        .card-featured {
-          grid-column: span 2;
+        @media (max-width: 1000px) {
+          .assets-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
-        @media (max-width: 900px) {
-          .grid-featured {
-            grid-template-columns: 1fr;
-          }
-          .card-featured {
-            grid-column: span 1;
-          }
+        @media (max-width: 600px) {
+          .assets-grid { grid-template-columns: 1fr; }
         }
 
         @keyframes fadeUp {
@@ -260,29 +255,17 @@ export default function AssetsPage() {
           </div>
         </div>
 
-        {/* Grid — first card featured (2-col span), rest normal */}
-        <div className="fade-3 grid-featured" style={{ marginTop: "64px" }}>
+        {/* Uniform grid — all cards equal size */}
+        <div className="fade-3 assets-grid" style={{ marginTop: "64px" }}>
           {assets.map((asset, i) => (
             <Link
               key={asset.id}
               href={`/assets/${asset.id}`}
-              className={`asset-card${i === 0 ? " card-featured" : ""}`}
+              className="asset-card"
             >
               {/* Image */}
-              <div style={{ aspectRatio: i === 0 ? "21/9" : "16/10", overflow: "hidden", position: "relative" }}>
+              <div style={{ aspectRatio: "16/10", overflow: "hidden", position: "relative" }}>
                 <span className="card-number">{String(i + 1).padStart(2, "0")}</span>
-                {i === 0 && (
-                  <div style={{
-                    position: "absolute", top: "20px", left: "20px", zIndex: 3,
-                    fontFamily: "'DM Sans', sans-serif", fontSize: "0.55rem",
-                    letterSpacing: "0.25em", textTransform: "uppercase",
-                    color: "#c9a97a", border: "1px solid #4a3820",
-                    padding: "5px 12px", background: "rgba(8,8,8,0.6)",
-                    backdropFilter: "blur(4px)",
-                  }}>
-                    Featured
-                  </div>
-                )}
                 <img
                   src={asset.images[0]}
                   alt={asset.name}
@@ -296,14 +279,14 @@ export default function AssetsPage() {
               </div>
 
               {/* Info */}
-              <div style={{ padding: "26px 28px 30px", position: "relative", zIndex: 2 }}>
-                <div style={{ display: "flex", gap: "8px", marginBottom: "12px", flexWrap: "wrap" }}>
+              <div style={{ padding: "22px 24px 26px", position: "relative", zIndex: 2 }}>
+                <div style={{ display: "flex", gap: "8px", marginBottom: "10px", flexWrap: "wrap" }}>
                   <span className="card-tag">Unreal Engine 5</span>
                   <span className="card-tag">Modular</span>
                 </div>
                 <h2 className="asset-card-title">{asset.name}</h2>
                 <p className="asset-card-desc">{asset.description}</p>
-                <div style={{ marginTop: "20px" }}>
+                <div style={{ marginTop: "16px" }}>
                   <span className="view-label">
                     View Kit <span style={{ fontSize: "0.85rem" }}>→</span>
                   </span>

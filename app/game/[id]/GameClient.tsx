@@ -1,16 +1,10 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import type { Game, MediaItem } from "../../../types/game";
 
 export default function GameClient({ game }: { game: Game }) {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [wishlisted, setWishlisted] = useState(false);
-
-  useEffect(() => {
-    const saved = localStorage.getItem(`wishlist-${game.id}`);
-    if (saved === "true") setWishlisted(true);
-  }, [game.id]);
 
   const nextSlide = () => {
     setActiveIndex((prev) => (prev === game.media.length - 1 ? 0 : prev + 1));
@@ -141,33 +135,29 @@ export default function GameClient({ game }: { game: Game }) {
           width: 18px;
         }
 
-        .wishlist-btn {
+        .store-btn {
           font-family: 'DM Sans', sans-serif;
           font-size: 0.68rem;
           font-weight: 300;
           letter-spacing: 0.28em;
           text-transform: uppercase;
-          border: 1px solid;
+          border: 1px solid #3a2e1e;
           padding: 14px 36px;
           cursor: pointer;
           transition: all 0.4s ease;
           background: transparent;
-        }
-
-        .wishlist-btn.default {
           color: #c9a97a;
-          border-color: #3a2e1e;
+          text-decoration: none;
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
         }
 
-        .wishlist-btn.default:hover {
+        .store-btn:hover {
           background: rgba(201, 169, 122, 0.08);
           border-color: #c9a97a;
           color: #f0e0c0;
-        }
-
-        .wishlist-btn.active {
-          color: #7ab87a;
-          border-color: #2e4a2e;
+          gap: 15px;
         }
 
         .back-link {
@@ -328,16 +318,14 @@ export default function GameClient({ game }: { game: Game }) {
             <p className="game-desc">{game.description}</p>
 
             <div style={{ paddingTop: "16px" }}>
-              <button
-                className={`wishlist-btn ${wishlisted ? "active" : "default"}`}
-                onClick={() => {
-                  const newState = !wishlisted;
-                  setWishlisted(newState);
-                  localStorage.setItem(`wishlist-${game.id}`, newState.toString());
-                }}
+              <a
+                href={game.store}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="store-btn"
               >
-                {wishlisted ? "✓ &nbsp;Wishlisted" : "+ &nbsp;Add to Wishlist"}
-              </button>
+                Get the Game &nbsp;→
+              </a>
             </div>
           </div>
 
