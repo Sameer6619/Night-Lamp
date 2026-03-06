@@ -6,6 +6,7 @@ export type Game = {
   id: number;
   title: string;
   description: string;
+  store: string;
   media: MediaItem[];
   min: {
     os: string;
